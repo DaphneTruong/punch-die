@@ -257,7 +257,6 @@ function createNotFoundItem(id, order_number) {
 }
 
 function addDoneItem(item) {
-  console.log('done_items in add before', done_items);
   const done_item = document.getElementById(`result-item-${item.id}`);
   const done_button = document.getElementById(`done-button-${item.id}`);
   let un_done_button = document.getElementById(`un-done-button-${item.id}`);
@@ -288,14 +287,10 @@ function addDoneItem(item) {
     done_item.classList.remove("done-item");
     removeDoneItem(item);
   });
-  
-  console.log('done_items in add', done_items);
 }
 
 /* Function to remove done item */
 function removeDoneItem(item) {
-  console.log('done_items in remove before', done_items);
-  console.log('Removing item:', item);
   // unmark the item visually
   const done_item = document.getElementById(`result-item-${item.id}`);
   removeClass(done_item, "done-item");
@@ -308,7 +303,6 @@ function removeDoneItem(item) {
 
   // remove from done_items array
   done_items = done_items.filter((i) => i.id !== item.id);
-  console.log('done_items in remove after', done_items);
 }
 
 /* Move all "No match found" items to the end of the array */
