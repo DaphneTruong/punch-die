@@ -1,19 +1,59 @@
 :root {
-  --salmon: #fa8072;
-  --mediumVioletRed: #c71585;
-  --darkOrange: #ff8c00;
-  --darkKhaki: #bdb76b;
-  --rebeccaPurple: #663399;
-  --darkSlateBlue: #483d8b;
-  --darkGreen: #006400;
-  --teal: #008080;
-  --steelBlue: #4682b4;
-  --navy: #000080;
-  --saddleBrown: #8b4513;
-  --darkSlateGray: #2f4f4f;
-  --maroon: #800000;
-  --rosyBrown: #bc8f8f;
-  --dodgerBlue: #1e90ff;
+    --salmon: #dba39c;
+    --mediumVioletRed: #fb1414;
+    --darkOrange: #ff8c00;
+    --darkKhaki: #bdb76b;
+    --rebeccaPurple: #8443c6;
+    --darkSlateBlue: #4e4cea;
+    --darkGreen: #47c847;
+    --teal: #9ec333;
+    --steelBlue: #566a7a;
+    --navy: #5252b9;
+    --saddleBrown: #835736;
+    --darkSlateGray: #348080;
+    --maroon: #921d1d;
+    --rosyBrown: #e38ce6;
+    --dodgerBlue: #a83b6d;
+    --dieColor01: #5252b9;
+    --dieColor02: #3535f3;
+    --dieColor03: #5e5e82;
+    --dieColor04: #a1a1c4;
+    --dieColor05: #47c847;
+    --dieColor06: #0d810d;
+    --dieColor07: #638063;
+    --dieColor08: #0c420c;
+}
+
+.dieColor01 {
+    color: var(--dieColor01);
+}
+
+.dieColor02 {
+    color: var(--dieColor02);
+}
+
+.dieColor03 {
+    color: var(--dieColor03);
+}
+
+.dieColor04 {
+    color: var(--dieColor04);
+}
+
+.dieColor05 {
+    color: var(--dieColor05);
+}
+
+.dieColor06 {
+    color: var(--dieColor06);
+}
+
+.dieColor07 {
+    color: var(--dieColor07);
+}
+
+.dieColor08 {
+    color: var(--dieColor08);
 }
 
 .salmon {
@@ -74,13 +114,13 @@
 
 form {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   column-gap: 1em;
   row-gap: 1em;
 }
 form input {
-  display: block;
-  margin: 0.5em auto;
+  /*display: block;*/
+  margin: 0.15em 5px;
 }
 
 h1 {
@@ -113,23 +153,25 @@ td {
   text-align: left;
 }
 
-#sorting-button {
-  margin: 1em 0;
-  padding: 0.5em 1em;
-  font-size: 1em;
-  background-color: var(--darkSlateGray);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
+#sorting-button, #print-button {
+    margin: 1em 0;
+    padding: 0.5em 0.25em;
+    font-size: 1em;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 60%;
+    height: 50%;
+    border: solid 1px var(--darkSlateGray);
+    background-color: #fff;
+    color: #000;
+    margin-left: 0.5em;
 }
 
 #result-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  row-gap: 1em;
-  margin: 2em auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 1em;
+    margin: 2em auto;
 }
 
 #result-list .result-item {
@@ -141,7 +183,7 @@ td {
 #result-list .result-item img {
   max-width: 100%;
   height: auto;
-  min-height: 200px;
+  min-height: 250px;
 }
 
 #result-list .result-item .order-id,
@@ -152,14 +194,30 @@ td {
   margin-top: -2px;
 }
 
+.punch-die{
+    display: inline-grid;
+}
+
 #result-list .result-item .id-name .order-number,
 #result-list .result-item .id-name .punch {
-  text-align: left;
+    text-align: left;
+}
+
+#result-list .result-item .punch-die .punch {
+    /*position: relative;*/
+    font-weight: bold;
+    font-size: 1.25em;
+    text-align: right;
+    /*top: -50px;*/ /* move up */
 }
 
 #result-list .result-item .punch-die .die {
-  font-style: italic;
-  text-align: right;
+    /*position: relative;*/
+    font-style: italic;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.25em;
+    /*top: -20px;*/ /* move up */
 }
 
 #result-list .result-item .punch-die .id-div {
@@ -171,28 +229,46 @@ td {
   cursor: pointer;
 }
 
-.done-item .order-id,
-.done-item .punch-die,
-.done-item .name-butt .name-div {
-  text-decoration: line-through;
+#result-list .result-item .id-div,
+#result-list .result-item .order-number {
+    text-align: left;
 }
+
+.done-item .id-div,
+.done-item .punch-die,
+.done-item .name-butt .name-div,
+.done-item .order-number{
+    text-decoration: line-through;
+}
+
 
 .done-button,
 .un-done-button {
-  padding: 0.5em;
-  border-radius: 50%;
-  background-color: #f0f8ff;
-  box-shadow: 2px 3px 3px rgba(29, 41, 59, 0.5);
+    width: 30px;
+    border: solid 1px #333;
+    padding: 0.2em;
+    border-radius: 50%;
 }
+
 
 .hidden {
   display: none;
 }
 
 footer {
-  color: var(--maroon);
-  font-size: 1.5em;
-  font-weight: bold;
+  color: #a4a4a4;
+  font-size: 1.2em;
+  /*font-weight: bold;*/
   text-align: center;
   margin: 2em auto;
+}
+
+.form-group{
+    border: solid;
+    border-width: 1.5px;
+}
+
+.input-id{
+    border: none;
+    width: 44.8%;
 }

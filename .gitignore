@@ -1,0 +1,25 @@
+# Ignore all files ending with .log
+*.log
+
+# Ignore a specific file named "config.ini"
+config.ini
+
+# Ignore the entire "node_modules" directory
+node_modules/
+
+# Ignore all files within the "build" directory
+build/*
+
+# Ignore all files with the .tmp extension in any directory
+**/*.tmp
+
+# Exclude a specific file from a previously ignored pattern
+# (e.g., ignore all .txt files except "important.txt")
+*.txt
+!important.txt
+
+# Ignore OS-specific temporary files
+.DS_Store
+Thumbs.db
+
+.vs
