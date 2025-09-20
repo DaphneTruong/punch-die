@@ -404,6 +404,7 @@ function addDoneItem(item) {
 }
 
 function createUndoneButton(id, parent_element) {
+
     un_done_button = document.createElement("div");
     un_done_button.classList.add("un-done-button");
     un_done_button.setAttribute("id", `un-done-button-${id}`);
